@@ -1,10 +1,6 @@
-
-
 # Simple Tour Package API
 
 A RESTful API built with Java Spring Boot for managing tour packages. This API supports creating, listing, and retrieving tour packages with validation and error handling.
-
-
 
 ## Features
 
@@ -13,8 +9,6 @@ A RESTful API built with Java Spring Boot for managing tour packages. This API s
 * Retrieve a single tour package by ID
 * Input validation and error responses
 * Interactive API documentation with Swagger UI
-
-
 
 ## Technologies Used
 
@@ -26,17 +20,13 @@ A RESTful API built with Java Spring Boot for managing tour packages. This API s
 * Hibernate Validator
 * Springdoc OpenAPI (Swagger)
 
-
-
 ## API Endpoints
 
 | Method | Endpoint          | Description               | Request Body / Params                |
-|  | -- | - |  |
+| ------ | ----------------- | ------------------------- | ------------------------------------ |
 | POST   | `/api/tours`      | Create a new tour package | JSON object with tour package fields |
 | GET    | `/api/tours`      | List all tour packages    | None                                 |
 | GET    | `/api/tours/{id}` | Get tour package by ID    | Path parameter: `id`                 |
-
-
 
 ## Sample Request Body for Creating Tour Package
 
@@ -53,11 +43,7 @@ A RESTful API built with Java Spring Boot for managing tour packages. This API s
 }
 ```
 
-
-
 ## API Documentation with Swagger UI
-
-This project integrates Swagger UI using Springdoc OpenAPI for easy API exploration and testing.
 
 Once the application is running, access the Swagger UI at:
 
@@ -65,13 +51,7 @@ Once the application is running, access the Swagger UI at:
 http://localhost:8080/swagger-ui.html
 ```
 
-Here, you can see all API endpoints, request/response schemas, and try out requests interactively.
-
-
-
-### Running PostgreSQL with Docker (Optional)
-
-To quickly start a PostgreSQL database locally using Docker, run:
+## Running PostgreSQL with Docker (Optional)
 
 ```bash
 docker run --name my-postgres \
@@ -82,22 +62,10 @@ docker run --name my-postgres \
   -d postgres:15
 ```
 
-**Explanation:**
-
-* `--name my-postgres`: Container name
-* `POSTGRES_USER=postgres`: Database username
-* `POSTGRES_PASSWORD=postgres`: Database password
-* `POSTGRES_DB=makemytourdb`: Database name
-* `-p 5432:5432`: Maps container port 5432 to local port 5432
-* `-d postgres:15`: Runs official PostgreSQL version 15 in detached mode
-
-
-
 ## Validation & Error Handling
 
 * Requests with empty or invalid fields will return HTTP 400 Bad Request with details.
 * Requests for non-existent IDs will return HTTP 404 Not Found.
-
 
 ## Getting Started
 
@@ -107,8 +75,6 @@ docker run --name my-postgres \
 * Maven
 * PostgreSQL (local or remote)
 * Docker (optional, for containerized setup)
-
-
 
 ### 1. Start Normally (Local JVM)
 
@@ -140,8 +106,6 @@ docker run --name my-postgres \
 5. Access API at: `http://localhost:8080/api/tours`
    Swagger UI at: `http://localhost:8080/swagger-ui.html`
 
-
-
 ### 2. Start Using Docker Image
 
 1. Build the Docker image:
@@ -161,7 +125,7 @@ docker run --name my-postgres \
      -d postgres:15
    ```
 
-3. Run the backend container (make sure to link to the DB host if needed):
+3. Run the backend container:
 
    ```bash
    docker run -p 8080:8080 \
@@ -174,16 +138,13 @@ docker run --name my-postgres \
 4. Access API at: `http://localhost:8080/api/tours`
    Swagger UI at: `http://localhost:8080/swagger-ui.html`
 
-
-
 ### 3. Start Using Docker Compose (Backend + PostgreSQL)
 
-2. Run both services:
+1. Run both services:
 
    ```bash
    docker-compose up --build
    ```
 
-3. Access API at: `http://localhost:8080/api/tours`
+2. Access API at: `http://localhost:8080/api/tours`
    Swagger UI at: `http://localhost:8080/swagger-ui.html`
-
