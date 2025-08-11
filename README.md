@@ -71,7 +71,7 @@ docker run --name my-postgres \
 
 ### Prerequisites
 
-* Java 21 or later
+* Java 21 
 * Maven
 * PostgreSQL (local or remote)
 * Docker (optional, for containerized setup)
